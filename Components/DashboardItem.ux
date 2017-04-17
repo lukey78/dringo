@@ -1,0 +1,18 @@
+<Panel ux:Class="DashboardItem">
+    <string ux:Property="Icon" />
+    <string ux:Property="Text" />
+    <string ux:Property="File" />
+
+    <Rectangle Width="80%" Height="80" MaxWidth="300" CornerRadius="0" Color="#229922">
+        <Stroke Color="#118811" />
+
+        <Panel Alignment="VerticalCenter">
+            <ColumnLayout Orientation="Vertical" ColumnCount="2" />
+            <Panel>
+                <Image File="{ReadProperty File}" Width="50" Alignment="Center" Color="White" />
+                <FAText Value="{ReadProperty Icon}" FontSize="50" Alignment="Center" Margin="0,0,0,0" />
+            </Panel>
+            <app.Text Value="{ReadProperty Text}" Alignment="Left" />
+        </Panel>
+    </Rectangle>
+</Panel>

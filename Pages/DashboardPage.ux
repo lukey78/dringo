@@ -1,0 +1,22 @@
+<Page ux:Class="DashboardPage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="DashboardPage.js" />
+
+    <DockPanel>
+        <StackPanel Alignment="VerticalCenter" Padding="0,50,0,0" Dock="Top">
+            <Image File="../Assets/climber.png" Width="30" Color="White" />
+            <app.Text Alignment="HorizontalCenter" FontSize="30">dringo</app.Text>
+        </StackPanel>
+
+        <ScrollView>
+            <Grid RowCount="4" CellSpacing="10" Margin="0,50" ContentAlignment="Center">
+                <DashboardItem Icon="&#xf007;" Text="{username}" />
+                <DashboardItem Icon="&#xf041;" Text="Ort auswählen" />
+                <DashboardItem Icon="" File="Assets/climber.png" Text="Klettern" />
+                <DashboardItem Icon="&#xf080;" Text="Auswerten" />
+            </Grid>
+        </ScrollView>
+    </DockPanel>
+
+
+</Page>

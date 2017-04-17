@@ -1,0 +1,25 @@
+{
+  "RootNamespace": "",
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "*",
+    "Modules/*.js:Bundle"
+  ],
+  "Projects": [
+    "fuse_modules/bolav/fuse-sqlite/sqlite_include.unoproj"
+  ],
+  "Excludes": [
+    "fuse_modules/"
+  ],
+  "FusePM": {
+    "Dependencies": [
+      "https://github.com/bolav/fuse-sqlite"
+    ]
+  },
+  "iOS": {
+    "DevelopmentTeam": "S6KKQ734DC"
+  }
+}

@@ -1,0 +1,1 @@
+<app.Text ux:Class="FAText" Font="FontAwesome">{value}</app.Text>
