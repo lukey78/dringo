@@ -11,6 +11,9 @@
         <Navigator DefaultPath="welcome">
             <WelcomePage ux:Template="welcome" router="router" />
             <DashboardPage ux:Template="dashboard" router="router" />
+
+            <LocationListPage ux:Template="locationList" router="router" />
+            <EditLocationPage ux:Template="editLocation" router="router" />
         </Navigator>
     </ClientPanel>
 </App>

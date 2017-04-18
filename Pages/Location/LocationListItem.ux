@@ -1,0 +1,44 @@
+<Panel ux:Class="LocationListItem" Margin="0,10,0,0">
+    <string ux:Property="Locname" />
+    <string ux:Property="City" />
+    <bool ux:Property="Indoor" />
+    <object ux:Property="ChooseClick" />
+    <object ux:Property="EditClick" />
+
+    <Rectangle ux:Name="dashboardRectangle" Width="80%" Height="50" MaxWidth="300" CornerRadius="0" Color="#229922" Clicked="{Property ChooseClick}">
+        <Stroke Color="#118811" />
+
+        <Grid ColumnCount="3" Columns="1*,3*,1*" Alignment="VerticalCenter">
+            <StackPanel Orientation="Horizontal">
+                <FAText Value="&#xf041;" FontSize="20" Alignment="CenterLeft" Margin="10,0,0,0" />
+                <FAText ux:Name="indoor" Value="&#xf015;" FontSize="20" Alignment="CenterLeft" Margin="5,0,0,0" Visibility="Hidden" />
+
+                <WhileTrue Value="{ReadProperty Indoor}">
+                    <Change indoor.Visibility = "Visible" />
+                </WhileTrue>
+            </StackPanel>
+
+            <StackPanel Alignment="Left">
+                <app.Text Value="{ReadProperty Locname}" Alignment="Left" FontSize="20" />
+                <app.Text Value="{ReadProperty City}" Alignment="Left" FontSize="10" />
+            </StackPanel>
+
+            <Panel Clicked="{Property EditClick}" HitTestMode="LocalBounds">
+                <Circle ux:Name="editCircle" Width=40 Height=40 Margin="10,0,0,0" Color="#ffffff22" />
+                <FAText ux:Name="edit" Value="&#xf040;" FontSize="20" Alignment="CenterRight" Margin="0,0,15,0" />
+                <WhilePressed>
+                    <Change dashboardRectangle.HitTestMode="None" />
+                    <Change editCircle.Color = "#ffffffaa" Duration="0.2" />
+                </WhilePressed>
+            </Panel>
+        </Grid>
+
+        <WhilePressed>
+            <Scale Factor=".98" Duration=".08" Easing="QuadraticOut" />
+            <Change dashboardRectangle.Color="#55bb55" Duration="0.2" />
+        </WhilePressed>
+
+    </Rectangle>
+
+
+</Panel>

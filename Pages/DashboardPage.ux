@@ -3,17 +3,19 @@
     <JavaScript File="DashboardPage.js" />
 
     <DockPanel>
-        <StackPanel Alignment="VerticalCenter" Padding="0,50,0,0" Dock="Top">
-            <Image File="../Assets/climber.png" Width="30" Color="White" />
-            <app.Text Alignment="HorizontalCenter" FontSize="30">dringo</app.Text>
-        </StackPanel>
+        <app.Header Text="" />
 
         <ScrollView>
             <Grid RowCount="4" CellSpacing="10" Margin="0,50" ContentAlignment="Center">
                 <DashboardItem Icon="&#xf007;" Text="{username}" />
-                <DashboardItem Icon="&#xf041;" Text="Ort auswählen" />
-                <DashboardItem Icon="" File="Assets/climber.png" Text="Klettern" />
+                <DashboardItem ux:Name="location" Icon="&#xf041;" Text="{selectedLocationName}" Clicked="{gotoLocationList}" />
+                <DashboardItem ux:Name="climb" Icon="" File="Assets/climber.png" Text="Klettern" />
                 <DashboardItem Icon="&#xf080;" Text="Auswerten" />
+
+                <WhileTrue Value={noLocationSelected}>
+                    <Change location.Text = "Wähle einen Ort zum Klettern" />
+                    <Change climb.IsEnabled = false  />
+                </WhileTrue>
             </Grid>
         </ScrollView>
     </DockPanel>

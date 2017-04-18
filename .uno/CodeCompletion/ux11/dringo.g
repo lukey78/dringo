@@ -1,0 +1,15 @@
+.uno/CodeCompletion/ux11/MainView.g.uno
+.uno/CodeCompletion/ux11/DashboardItem.g.uno
+.uno/CodeCompletion/ux11/app.Text.g.uno
+.uno/CodeCompletion/ux11/FAText.g.uno
+.uno/CodeCompletion/ux11/app.Button.g.uno
+.uno/CodeCompletion/ux11/app.Caption.g.uno
+.uno/CodeCompletion/ux11/app.Header.g.uno
+.uno/CodeCompletion/ux11/app.TextBox.g.uno
+.uno/CodeCompletion/ux11/app.TextView.g.uno
+.uno/CodeCompletion/ux11/DashboardPage.g.uno
+.uno/CodeCompletion/ux11/WelcomePage.g.uno
+.uno/CodeCompletion/ux11/LocationListItem.g.uno
+.uno/CodeCompletion/ux11/LocationListPage.g.uno
+.uno/CodeCompletion/ux11/Separator.g.uno
+.uno/CodeCompletion/ux11/dringo.unoproj.g.uno

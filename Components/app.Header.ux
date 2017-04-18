@@ -1,0 +1,7 @@
+<StackPanel ux:Class="app.Header" Alignment="VerticalCenter" Padding="0,50,0,0" Dock="Top">
+    <string ux:Property="Text" />
+
+    <Image File="../Assets/climber.png" Width="30" Color="White" />
+    <app.Text Alignment="HorizontalCenter" FontSize="30">dringo</app.Text>
+    <app.Text Alignment="HorizontalCenter" FontSize="15" Margin="0,5,0,0">{ReadProperty Text}</app.Text>
+</StackPanel>

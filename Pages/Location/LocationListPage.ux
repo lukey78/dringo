@@ -1,0 +1,24 @@
+<Page ux:Class="LocationListPage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="LocationListPage.js" />
+
+    <DockPanel>
+        <app.Header Text="Ort auswählen oder erstellen" />
+
+        <Grid Dock="Bottom">
+            <app.Button Text="Neuen Ort hinzufügen" Color="#229922" />
+            <app.Button Text="Zurück" Clicked="{goBack}" />
+        </Grid>
+
+        <ScrollView>
+            <StackPanel>
+                <Each Items="{locations}">
+                    <LocationListItem Locname="{name}" City="{city}" Indoor="{indoor}" ChooseClick="{chooseLocation}" EditClick="{editLocation}" />
+                </Each>
+            </StackPanel>
+
+        </ScrollView>
+    </DockPanel>
+
+
+</Page>

@@ -1,0 +1,34 @@
+<Page ux:Class="EditLocationPage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="EditLocationPage.js" />
+
+    <DockPanel>
+        <app.Header Text="Ort bearbeiten" />
+
+        <Grid Dock="Bottom" ColumnCount="2">
+            <app.Button Text="Speichern" Color="#229922" Clicked="{save}" />
+            <app.Button Text="Zurück" Clicked="{goBack}" />
+        </Grid>
+
+        <ScrollView>
+           <StackPanel Padding="10" ItemSpacing="10">
+                <app.Text ux:Class="caption" Opacity=".6" Margin="0, 0, 0, 5" />
+
+                <StackPanel>
+                    <caption>Name:</caption>
+                    <app.TextView Value="{name}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <caption>Stadt/Region:</caption>
+                    <app.TextView Value="{city}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <caption>Halle?</caption>
+                    <app.TextView Value="{indoor}" />
+                </StackPanel>
+           </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</Page>
