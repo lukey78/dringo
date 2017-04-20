@@ -1,24 +1,38 @@
 {
   "RootNamespace": "",
+  "Name": "Dringo",
+  "Description": "Die Kletter-App",
+  "Version": "0.1",
+  "VersionCode": "0",
+  "Publisher": "Jens Hassler",
+
   "Packages": [
     "Fuse",
     "FuseJS"
   ],
+
   "Includes": [
     "*",
-    "Modules/*.js:Bundle"
+    "Modules/*.js:Bundle",
+    "Localization/DeviceLocale.uno",
+    "Localization/Localization.js:Bundle",
+    "Translations/*.json:Bundle"    
   ],
-  "Projects": [
-    "fuse_modules/bolav/fuse-sqlite/sqlite_include.unoproj"
-  ],
+
   "Excludes": [
     "fuse_modules/"
   ],
+
+  "Projects": [
+    "fuse_modules/bolav/fuse-sqlite/sqlite_include.unoproj"
+  ],
+
   "FusePM": {
     "Dependencies": [
       "https://github.com/bolav/fuse-sqlite"
     ]
   },
+
   "iOS": {
     "DevelopmentTeam": "S6KKQ734DC"
   }

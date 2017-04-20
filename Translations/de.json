@@ -1,0 +1,33 @@
+{
+    "controls": {
+        "ok": "OK",
+        "back": "Zurück",
+        "cancel": "Abbrechen",
+        "save": "Speichern"
+    },
+    "dringo": {
+        "description": "die Kletter-App"
+    },
+    "welcome": {
+        "greetingUnknown": "Hallo! Du benutzt dringo zum ersten Mal. Bitte sag mir deinen Namen, damit ich Dein Profil erstellen kann. Deine Daten werden nur lokal gespeichert.",
+        "greetingHello": "Hallo",
+        "greetingKnown": "Schön dass du zurück bist.",
+        "letsgo": "Los geht's"
+    },
+    "dashboard": {
+        "profile": "Profil",
+        "chooseLocation": "Wähle einen Ort zum Klettern",
+        "climb": "Klettern",
+        "stats": "Auswerten"
+    },
+    "location": {
+        "title": "Ort auswählen oder erstellen",
+        "edit": "Ort bearbeiten",
+        "new": "Neuen Ort erstellen",
+        "field": {
+            "name": "Name",
+            "city": "Stadt/Region",
+            "indoor": "Halle?"
+        }        
+    }
+}

@@ -1,0 +1,9 @@
+<ToggleControl ux:Class="app.IndoorCheckbox" BoxSizing="FillAspect" Aspect="1" Margin="2" HitTestMode="LocalBounds" Width="48" Height="48">
+    <FAText ux:Name="_indoorToggled" Value="&#xf015;" FontSize="40" Margin="0,0,0,0" Opacity="0.2"/>
+    <WhileTrue Value="{ReadProperty this.Value}">
+        <Change _indoorToggled.Opacity="1" Duration="0.2" Easing="CubicOut" EasingBack="CubicIn" />
+    </WhileTrue>
+    <Clicked>
+        <Toggle Target="this" />
+    </Clicked>
+</ToggleControl>

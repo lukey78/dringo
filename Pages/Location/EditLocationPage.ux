@@ -3,11 +3,11 @@
     <JavaScript File="EditLocationPage.js" />
 
     <DockPanel>
-        <app.Header Text="Ort bearbeiten" />
+        <app.Header Text="{loc.location.edit}" />
 
         <Grid Dock="Bottom" ColumnCount="2">
-            <app.Button Text="Speichern" Color="#229922" Clicked="{save}" />
-            <app.Button Text="Zurück" Clicked="{goBack}" />
+            <app.Button Text="{loc.controls.save}" Color="#229922" Clicked="{save}" />
+            <app.Button Text="{loc.controls.cancel}" Clicked="{goBack}" />
         </Grid>
 
         <ScrollView>
@@ -15,19 +15,20 @@
                 <app.Text ux:Class="caption" Opacity=".6" Margin="0, 0, 0, 5" />
 
                 <StackPanel>
-                    <caption>Name:</caption>
+                    <caption>{loc.location.field.name}:</caption>
                     <app.TextView Value="{name}"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <caption>Stadt/Region:</caption>
+                    <caption>{loc.location.field.city}:</caption>
                     <app.TextView Value="{city}" />
                 </StackPanel>
 
-                <StackPanel>
-                    <caption>Halle?</caption>
-                    <app.TextView Value="{indoor}" />
+                <StackPanel Orientation="Horizontal">
+                    <caption Alignment="CenterLeft" Margin="0,0,10,0">{loc.location.field.indoor}</caption>
+                    <app.IndoorCheckbox Value="{indoor}" Alignment="Left" />
                 </StackPanel>
+
            </StackPanel>
         </ScrollView>
     </DockPanel>

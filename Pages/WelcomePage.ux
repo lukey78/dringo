@@ -7,22 +7,22 @@
             <StackPanel Alignment="VerticalCenter" Padding="0,100,0,0">
                 <Image File="../Assets/climber.png" Width="100" Color="White" />
                 <app.Text Alignment="HorizontalCenter" FontSize="70">dringo</app.Text>
-                <app.Text Alignment="HorizontalCenter" Opacity=".5">die Kletter-App</app.Text>
+                <app.Text Alignment="HorizontalCenter" Opacity=".5">{loc.dringo.description}</app.Text>
             </StackPanel>
 
             <StackPanel Alignment="VerticalCenter">
                 <app.Text Alignment="HorizontalCenter" TextWrapping="Wrap" Visibility="{visibilityOfRegisterControls}">
-                        Hallo! Du benutzt dringo zum ersten Mal. Bitte sag mir deinen Namen, damit ich Dein Profil erstellen kann. Deine Daten werden nur lokal gespeichert.
+                        {loc.welcome.greetingUnknown}
                 </app.Text>
 
-                <app.Text Alignment="HorizontalCenter" Visibility="{visibilityOfStartControls}">Hallo {username}</app.Text>
-                <app.Text Alignment="HorizontalCenter" Visibility="{visibilityOfStartControls}">Schön dass du zurück bist.</app.Text>
+                <app.Text Alignment="HorizontalCenter" Visibility="{visibilityOfStartControls}">{loc.welcome.greetingHello} {username}</app.Text>
+                <app.Text Alignment="HorizontalCenter" Visibility="{visibilityOfStartControls}">{loc.welcome.greetingKnown}</app.Text>
 
             </StackPanel>
 
             <StackPanel Alignment="VerticalCenter">
                 <StackPanel Alignment="VerticalCenter" Visibility="{visibilityOfStartControls}">
-                    <app.Button Text="Los geht's" Alignment="VerticalCenter" Margin="50,0" FontSize="18" Clicked="{start}" />
+                    <app.Button Text="{loc.welcome.letsgo}" Alignment="VerticalCenter" Margin="50,0" FontSize="18" Clicked="{start}" />
                 </StackPanel>
 
                 <StackPanel Alignment="VerticalCenter" Visibility="{visibilityOfRegisterControls}">

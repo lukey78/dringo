@@ -3,11 +3,11 @@
     <JavaScript File="LocationListPage.js" />
 
     <DockPanel>
-        <app.Header Text="Ort auswählen oder erstellen" />
+        <app.Header Text="{loc.location.title}" />
 
         <Grid Dock="Bottom">
-            <app.Button Text="Neuen Ort hinzufügen" Color="#229922" />
-            <app.Button Text="Zurück" Clicked="{goBack}" />
+            <app.Button Text="{loc.location.new}" Color="#229922" />
+            <app.Button Text="{loc.controls.back}" Clicked="{goBack}" />
         </Grid>
 
         <ScrollView>

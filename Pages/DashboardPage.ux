@@ -9,11 +9,11 @@
             <Grid RowCount="4" CellSpacing="10" Margin="0,50" ContentAlignment="Center">
                 <DashboardItem Icon="&#xf007;" Text="{username}" />
                 <DashboardItem ux:Name="location" Icon="&#xf041;" Text="{selectedLocationName}" Clicked="{gotoLocationList}" />
-                <DashboardItem ux:Name="climb" Icon="" File="Assets/climber.png" Text="Klettern" />
-                <DashboardItem Icon="&#xf080;" Text="Auswerten" />
+                <DashboardItem ux:Name="climb" Icon="" File="Assets/climber.png" Text="{loc.dashboard.climb}" />
+                <DashboardItem Icon="&#xf080;" Text="{loc.dashboard.stats}" />
 
                 <WhileTrue Value={noLocationSelected}>
-                    <Change location.Text = "Wähle einen Ort zum Klettern" />
+                    <Change location.Text = "{loc.dashboard.chooseLocation}" />
                     <Change climb.IsEnabled = false  />
                 </WhileTrue>
             </Grid>

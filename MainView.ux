@@ -7,6 +7,11 @@
     <iOS.StatusBarConfig Style="Light" />
     <Android.StatusBarConfig Color="#022328" />
 
+    <JavaScript>
+        var Localization = require("Localization/Localization.js");
+        module.exports = { loc: Localization.loc };
+    </JavaScript>
+
     <ClientPanel>
         <Navigator DefaultPath="welcome">
             <WelcomePage ux:Template="welcome" router="router" />
