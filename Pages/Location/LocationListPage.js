@@ -15,10 +15,15 @@ function editLocation(locationItem) {
     router.push("editLocation", selectedLocation);
 }
 
+function newLocation() {
+    router.push("newLocation", Context.getNewLocation());
+}
+
 module.exports = {
     goBack: goBack,
     chooseLocation: chooseLocation,
     editLocation: editLocation,
+    newLocation: newLocation,
 
     locations: Context.locations
 }

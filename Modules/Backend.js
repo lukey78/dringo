@@ -52,21 +52,17 @@ function getUserProfile() {
 
 function getLocations() {
     return new Promise(function(resolve, reject) {
-        //var r =  db.query("select * from location");
-        resolve(locations);
+        var r =  db.query("select * from location order by name");
+        resolve(r);
     });
 }
 
 function updateLocation(id, name, city, indoor) {
-    for (var i=0; i < locations.length; i++) {
-        var location = locations[i];
-        if (location.id == id) {
-            location.name = name;
-            location.city = city;
-            location.indoor = indoor;
-            break;
-        }
-    }
+    db.execute("update location set name=?, city=?, indoor=? where id=?", name, city, indoor, id);
+}
+
+function createLocation(name, city, indoor) {
+    db.execute("insert into location (name, city, indoor) values (?, ?, ?)", name, city, indoor);
 }
 
 initializeDatabase();
@@ -76,5 +72,6 @@ module.exports = {
     setUserProfile: setUserProfile,
 
     getLocations: getLocations,
-    updateLocation: updateLocation
+    updateLocation: updateLocation,
+    createLocation: createLocation
 }

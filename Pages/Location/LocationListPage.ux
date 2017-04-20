@@ -6,7 +6,7 @@
         <app.Header Text="{loc.location.title}" />
 
         <Grid Dock="Bottom">
-            <app.Button Text="{loc.location.new}" Color="#229922" />
+            <app.Button Text="{loc.location.new}" Color="#229922" Clicked="{newLocation}" />
             <app.Button Text="{loc.controls.back}" Clicked="{goBack}" />
         </Grid>
 

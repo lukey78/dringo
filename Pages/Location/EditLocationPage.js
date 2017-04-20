@@ -9,7 +9,11 @@ var city = location.map(function(l) { return l.city });
 var indoor = location.map(function(l) { return l.indoor });
 
 function save() {
-    Context.updateLocation(id.value, name.value, city.value, indoor.value);
+    if (id.value > 0) {
+        Context.updateLocation(id.value, name.value, city.value, indoor.value);
+    } else {
+        Context.createLocation(name.value, city.value, indoor.value); 
+    }
     router.goBack();
 }
 

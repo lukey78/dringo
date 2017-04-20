@@ -3,6 +3,13 @@ var Observable = require("FuseJS/Observable");
 
 var currentLocations = Observable();
 
+var emptyLocation = {
+    "id": null,
+    "name": "",
+    "city": "",
+    "indoor": false
+};
+
 function getLocations() {
     Backend.getLocations()
         .then(function(newLocations) {
@@ -18,22 +25,18 @@ function getLocations() {
         });
 }
 
-function createLocation(name, city, indoor) {
+function getNewLocation() {
+    return emptyLocation;
+}
 
+function createLocation(name, city, indoor) {
+    Backend.createLocation(name, city, indoor ? 1: 0);
+    this.getLocations();
 }
 
 function updateLocation(id, name, city, indoor) {
-    for (var i=0; i < currentLocations.length; i++) {
-        var loc = currentLocations.getAt(i);
-        if (loc.id === id) {
-            loc.name = name;
-            loc.city = city;
-            loc.indoor = indoor;
-            currentLocations.replaceAt(i, loc);
-        }
-    }
-
-    Backend.updateLocation(id, name, city, indoor);
+    Backend.updateLocation(id, name, city, indoor ? 1 : 0);
+    this.getLocations();
 }
 
 function deleteLocation(id) {
@@ -47,5 +50,6 @@ module.exports = {
     updateLocation: updateLocation,
     deleteLocation: deleteLocation,
 
+    getNewLocation: getNewLocation,
     locations: currentLocations
 };

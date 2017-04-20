@@ -1,5 +1,7 @@
 <Page ux:Class="EditLocationPage">
+    <string ux:Dependency="page_type" />
     <Router ux:Dependency="router" />
+
     <JavaScript File="EditLocationPage.js" />
 
     <DockPanel>

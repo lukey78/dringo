@@ -18,7 +18,8 @@
             <DashboardPage ux:Template="dashboard" router="router" />
 
             <LocationListPage ux:Template="locationList" router="router" />
-            <EditLocationPage ux:Template="editLocation" router="router" />
+            <EditLocationPage ux:Template="editLocation" router="router" page_type="edit" />
+            <EditLocationPage ux:Template="newLocation" router="router" page_type="new" />
         </Navigator>
     </ClientPanel>
 </App>
