@@ -1,0 +1,48 @@
+<Panel ux:Class="app.ButtonDeleteConfirm" Clicked="{clickHandler}" Margin="5" Padding="10" FontSize="16" MaxWidth="300" Color="#dd4444">
+    <string ux:Property="Text" />
+    <float4 ux:Property="FontSize" />
+    <float4 ux:Property="Color" />
+    <object ux:Property="Action" />
+    <Panel ux:Property="LayoutTarget" />
+
+    <Rectangle ux:Name="buttonRectangle" Layer="Background" Color="{ReadProperty Color}" CornerRadius="4">
+        <FAText ux:Name="trashIcon" Value="&#xf014;" FontSize="20" Alignment="Center" />
+    </Rectangle>
+
+    <StackPanel ux:Name="deleteActions" Visibility="Collapsed">
+        <app.Text Alignment="Center" Margin="0,50,0,50" TextWrapping="Wrap">Möchten Sie diesen Eintrag wirklich löschen?</app.Text>
+
+        <app.Button Text="Ja, löschen" Color="#ff4444" Clicked="{ReadProperty Action}" />
+
+        <app.ButtonCancel>
+            <Clicked>
+                <Toggle Target="expanded" />
+            </Clicked>
+        </app.ButtonCancel>
+    </StackPanel>
+
+    <LayoutAnimation>
+        <Resize X="1" Y="1" RelativeTo="SizeChange" Duration="0.3" />
+        <Move X="1" Y="1" RelativeTo="PositionChange" Duration="0.3" />
+    </LayoutAnimation>
+
+    <Clicked>
+        <Toggle Target="expanded" />
+    </Clicked>
+
+    <WhileTrue ux:Name="expanded">
+        <Change this.LayoutMaster="{Property LayoutTarget}" />
+        <Change this.Margin="5" />
+        <Change this.MaxWidth="999999" />
+        <Change this.Y="50%" />
+        <Change this.Width="100%" />
+        <Change this.Height="300" />
+        <Change trashIcon.Alignment="TopLeft" />
+        <Change trashIcon.Margin="10" />
+        <Change deleteActions.Visibility="Visible" />
+        <BringToFront />
+    </WhileTrue>
+
+    
+    <app.Text Value="{ReadProperty Text}" FontSize="{ReadProperty FontSize}" TextAlignment="Center" />
+</Panel>

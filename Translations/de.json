@@ -3,7 +3,8 @@
         "ok": "OK",
         "back": "Zurück",
         "cancel": "Abbrechen",
-        "save": "Speichern"
+        "save": "Speichern",
+        "delete": "Löschen"
     },
     "dringo": {
         "description": "die Kletter-App"
@@ -27,7 +28,25 @@
         "field": {
             "name": "Name",
             "city": "Stadt/Region",
-            "indoor": "Halle?"
-        }        
+            "indoor": "Halle?",
+            "routeCount": "Anzahl Routen"
+        }
+    },
+    "route": {
+        "title": "Routen in ",
+        "edit": "Route bearbeiten",
+        "new": "Neue Route erstellen",
+        "field": {
+            "name": "Name",
+            "description": "Bemerkung",
+            "rating": "Schwierigkeit",
+            "sector": "Sektor",
+            "author": "gebaut von",
+            "height": "Höhe",
+            "bolts": "Anzahl Haken",
+            "dateFrom": "Gebaut am",
+            "active": "Aktiv?"
+        }
     }
+
 }

@@ -1,0 +1,1 @@
+<app.Button ux:Class="app.ButtonSave" Text="{loc.controls.save}" Color="#229922" />

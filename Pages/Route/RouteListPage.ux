@@ -1,0 +1,24 @@
+<Page ux:Class="RouteListPage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="RouteListPage.js" />
+
+    <DockPanel>
+        <app.Header Text="{loc.route.title} {locationName}" />
+
+        <Grid Dock="Bottom">
+            <app.Button Text="{loc.route.new}" Color="#229922" Clicked="{newRoute}" />
+            <app.Button Text="{loc.controls.back}" Clicked="{goBack}" />
+        </Grid>
+
+        <ScrollView LayoutMode="PreserveVisual">
+            <StackPanel>
+                <Each Items="{routes}">
+                    <RouteListItem SecName="{name}" Clicked="{editRoute}" />
+                </Each>
+            </StackPanel>
+
+        </ScrollView>
+    </DockPanel>
+
+
+</Page>

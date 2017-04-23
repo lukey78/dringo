@@ -1,0 +1,23 @@
+<Panel ux:Class="RouteListItem" Margin="0,10,0,0">
+    <string ux:Property="SecName" />
+    <int ux:Property="RouteCount" />
+
+    <Rectangle ux:Name="dashboardRectangle" Width="80%" Height="50" MaxWidth="300" CornerRadius="0" Color="#229922">
+        <Stroke Color="#118811" />
+
+        <Grid ColumnCount="1" Alignment="VerticalCenter">
+            <StackPanel Alignment="Left">
+                <app.Text Value="{ReadProperty SecName}" Alignment="Left" FontSize="20" />
+                <app.Text Value="{ReadProperty RouteCount} Routen" Alignment="Left" FontSize="10" />
+            </StackPanel>
+        </Grid>
+
+        <WhilePressed>
+            <Scale Factor=".98" Duration=".08" Easing="QuadraticOut" />
+            <Change dashboardRectangle.Color="#55bb55" Duration="0.2" />
+        </WhilePressed>
+
+    </Rectangle>
+
+
+</Panel>

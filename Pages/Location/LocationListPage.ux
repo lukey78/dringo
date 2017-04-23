@@ -10,7 +10,7 @@
             <app.Button Text="{loc.controls.back}" Clicked="{goBack}" />
         </Grid>
 
-        <ScrollView>
+        <ScrollView LayoutMode="PreserveVisual">
             <StackPanel>
                 <Each Items="{locations}">
                     <LocationListItem Locname="{name}" City="{city}" Indoor="{indoor}" ChooseClick="{chooseLocation}" EditClick="{editLocation}" />

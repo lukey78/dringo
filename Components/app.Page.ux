@@ -1,0 +1,6 @@
+<Page ux:Class="app.Page" JS="">
+    <Router ux:Dependency="router" ux:Binding="router" />
+    <string ux:Property="JS" />
+
+    <JavaScript File="{ReadProperty JS}" />
+</Page>

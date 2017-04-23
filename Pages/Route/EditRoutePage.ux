@@ -1,0 +1,23 @@
+<Page ux:Class="EditRoutePage">
+    <Router ux:Dependency="router" />
+    <JavaScript File="EditRoutePage.js" />
+
+    <DockPanel ux:Name="mypanel">
+        <app.Header Text="{loc.location.edit}" />
+
+        <Grid Dock="Bottom" ColumnCount="3" Columns="3*,2*,1*">
+            <app.ButtonSave Clicked="{save}" />
+            <app.ButtonCancel Clicked="{cancel}" />
+            <app.ButtonDelete Clicked="{delete}" />
+        </Grid>
+
+        <ScrollView>
+           <StackPanel Padding="10" ItemSpacing="10">
+                <StackPanel>
+                    <app.Caption>{loc.location.field.name}:</app.Caption>
+                    <app.TextView Value="{name}"/>
+                </StackPanel>
+           </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</Page>

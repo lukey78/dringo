@@ -1,0 +1,24 @@
+<Page ux:Class="NewRoutePage">
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="EditRoutePage.js" />
+
+    <DockPanel>
+        <app.Header Text="{locationName}: {loc.route.new}" />
+
+        <Grid Dock="Bottom" ColumnCount="2">
+            <app.Button Text="{loc.controls.save}" Color="#229922" Clicked="{save}" />
+            <app.Button Text="{loc.controls.cancel}" Clicked="{cancel}" />
+        </Grid>
+
+        <ScrollView>
+           <StackPanel Padding="10" ItemSpacing="10">
+                <StackPanel>
+                    <app.Caption>{loc.route.field.name}:</app.Caption>
+                    <app.TextView Value="{name}"/>
+                </StackPanel>
+
+           </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</Page>

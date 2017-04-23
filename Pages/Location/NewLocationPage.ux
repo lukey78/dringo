@@ -1,14 +1,14 @@
-<Page ux:Class="EditLocationPage" ux:Name="mypage">
+<Page ux:Class="NewLocationPage">
     <Router ux:Dependency="router" />
+
     <JavaScript File="EditLocationPage.js" />
 
-    <DockPanel ux:Name="mypanel">
-        <app.Header Text="{loc.location.edit}" />
+    <DockPanel>
+        <app.Header Text="{loc.location.new}" />
 
-        <Grid Dock="Bottom" ColumnCount="3" Columns="3*,2*,1*">
-            <app.ButtonSave Clicked="{save}" />
-            <app.ButtonCancel Clicked="{cancel}" />
-            <app.ButtonDelete Clicked="{delete}" />
+        <Grid Dock="Bottom" ColumnCount="2">
+            <app.Button Text="{loc.controls.save}" Color="#229922" Clicked="{save}" />
+            <app.Button Text="{loc.controls.cancel}" Clicked="{cancel}" />
         </Grid>
 
         <ScrollView>
@@ -28,12 +28,6 @@
                     <app.IndoorCheckbox Value="{indoor}" Alignment="Left" />
                 </StackPanel>
 
-                <StackPanel Margin="0,20,0,0">
-                    <app.Button Text="{routeCount} Routen" Clicked="{editRoutes}">
-                        <Image File="../../Assets/climber.png" Width="20" Alignment="Left" />
-                        <FAText Value="&#xf013;" FontSize="20" Alignment="Right" />
-                    </app.Button>
-                </StackPanel>
            </StackPanel>
         </ScrollView>
     </DockPanel>

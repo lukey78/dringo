@@ -1,0 +1,3 @@
+<app.Button ux:Class="app.ButtonDelete" Color="#dd4444">
+    <FAText Value="&#xf014;" FontSize="20" Alignment="Center" />
+</app.Button>

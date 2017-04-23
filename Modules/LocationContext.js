@@ -7,7 +7,8 @@ var emptyLocation = {
     "id": null,
     "name": "",
     "city": "",
-    "indoor": false
+    "indoor": false,
+    "routeCount": 0
 };
 
 function getLocations() {
@@ -40,6 +41,8 @@ function updateLocation(id, name, city, indoor) {
 }
 
 function deleteLocation(id) {
+    Backend.deleteLocation(id);
+    this.getLocations();
 }
 
 getLocations();

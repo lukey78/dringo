@@ -1,4 +1,4 @@
-<Panel ux:Class="app.Button" Clicked="{clickHandler}" Margin="5" Padding="10" FontSize="16" Width="80%" MaxWidth="300" Color="#125F63">
+<Panel ux:Class="app.Button" Clicked="{clickHandler}" Margin="5" Padding="10" FontSize="16" MaxWidth="300" Color="#125F63">
     <string ux:Property="Text" />
     <float4 ux:Property="FontSize" />
     <float4 ux:Property="Color" />

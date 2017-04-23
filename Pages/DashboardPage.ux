@@ -20,5 +20,11 @@
         </ScrollView>
     </DockPanel>
 
+    <Navigator>    
+        <LocationListPage ux:Template="locationList" router="router" />
+        <EditLocationPage ux:Template="editLocation" router="router" />
+        <NewLocationPage ux:Template="newLocation" router="router" />
+    </Navigator>
+
 
 </Page>
