@@ -3,7 +3,7 @@
     <JavaScript File="EditRoutePage.js" />
 
     <DockPanel ux:Name="mypanel">
-        <app.Header Text="{loc.location.edit}" />
+        <app.Header Text="{loc.route.edit}" />
 
         <Grid Dock="Bottom" ColumnCount="3" Columns="3*,2*,1*">
             <app.ButtonSave Clicked="{save}" />
@@ -14,9 +14,50 @@
         <ScrollView>
            <StackPanel Padding="10" ItemSpacing="10">
                 <StackPanel>
-                    <app.Caption>{loc.location.field.name}:</app.Caption>
+                    <app.Caption>{loc.route.field.name}:</app.Caption>
                     <app.TextView Value="{name}"/>
                 </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.description}:</app.Caption>
+                    <app.TextView Value="{description}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.rating}:</app.Caption>
+                    <app.TextView Value="{ratingId}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.sector}:</app.Caption>
+                    <app.TextView Value="{sector}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.author}:</app.Caption>
+                    <app.TextView Value="{author}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.height}:</app.Caption>
+                    <app.TextView Value="{height}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.bolts}:</app.Caption>
+                    <app.TextView Value="{bolts}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.dateFrom}:</app.Caption>
+                    <app.DateField DateValue="{dateFrom}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.active}:</app.Caption>
+                    <app.TextView Value="{active}"/>
+                </StackPanel>
+
            </StackPanel>
         </ScrollView>
     </DockPanel>

@@ -1,0 +1,63 @@
+<Panel ux:Class="app.DatePicker" IsEnabled="false" HitTestMode="Children" Height="100%">
+    <object ux:Property="DateProperty" />
+    <object ux:Property="ChooseHandler" />
+    <bool ux:Property="IsEnabled" />
+
+    <AlternateRoot ux:Name="dpModal" IsEnabled="{ReadProperty IsEnabled}" ParentNode="{Resource FullWindow}">
+        <StackPanel Background="White" Height="50%">
+            <NativeViewHost>
+                <Native.DatePicker ux:Name="datePicker" />
+            </NativeViewHost>
+            <JavaScript>
+                var DateUtils = require('../Modules/DateUtils');
+
+                var myDateProperty = this.DateProperty.innerTwoWay();
+
+                // set initial value to current value
+                this.DateProperty.inner().onValueChanged(module, function(d) {
+                    if (d === null) {
+                        return;
+                    }
+                    datePicker.setDate(DateUtils.getDateStringAsArray(d));
+                });
+
+                formattedDate = myDateProperty.map(function(d) {
+                    return DateUtils.formatDate(DateUtils.stringToDate(d));
+                });
+
+                datePicker.CurrentDate.addSubscriber(function () {
+                    var d = datePicker.CurrentDate.value;
+                    myDateProperty.value = DateUtils.getDateArrayAsDateString(d);
+                    console.log("Date changed: " + myDateProperty.value);
+                });
+
+                reset = function() {
+                    myDateProperty.value = null;
+                }
+
+                choose = function() {
+                }
+
+                module.exports = {
+                    myDateProperty,
+                    formattedDate,
+                    choose,
+                    reset
+                };
+
+            </JavaScript>
+
+            <app.Button Text="Datum wählen: {formattedDate}" Clicked="{choose}">
+                <Clicked>
+                    <Set this.IsEnabled="false" />
+                </Clicked>
+            </app.Button>
+
+            <app.Button Text="Datum löschen" Clicked="{reset}">
+                <Clicked>
+                    <Set this.IsEnabled="false" />
+                </Clicked>
+            </app.Button>
+        </StackPanel>
+    </AlternateRoot>
+</Panel>

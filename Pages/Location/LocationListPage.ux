@@ -13,7 +13,7 @@
         <ScrollView LayoutMode="PreserveVisual">
             <StackPanel>
                 <Each Items="{locations}">
-                    <LocationListItem Locname="{name}" City="{city}" Indoor="{indoor}" ChooseClick="{chooseLocation}" EditClick="{editLocation}" />
+                    <LocationListItem Locname="{name}" City="{city}" Indoor="{indoor}" RouteCount="{routeCount}" ChooseClick="{chooseLocation}" EditClick="{editLocation}" />
                 </Each>
             </StackPanel>
 

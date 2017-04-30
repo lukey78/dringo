@@ -31,8 +31,8 @@ function cancel() {
 }
 
 function editRoutes() {
-    console.log("routing to routeList with location id " + id.value);
-    router.push("routeList", {"locationId": id.value, "locationName": name.value});
+    //console.log("routing to routeList with location id " + id.value);
+    router.push("routeList", { "locationId": id.value, "locationName": name.value });
 }
 
 module.exports = {

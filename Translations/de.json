@@ -29,7 +29,7 @@
             "name": "Name",
             "city": "Stadt/Region",
             "indoor": "Halle?",
-            "routeCount": "Anzahl Routen"
+            "routeCount": "Routen"
         }
     },
     "route": {

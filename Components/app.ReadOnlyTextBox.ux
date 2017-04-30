@@ -1,0 +1,10 @@
+<Panel ux:Class="app.ReadOnlyTextBox" Padding="10">
+    <string ux:Property="Value" />
+    <float4 ux:Property="Color" />
+
+    <Rectangle ux:Name="buttonRectangle" Layer="Background" Color="{ReadProperty Color}" CornerRadius="4">
+        <Stroke Color="#cccccc" />
+    </Rectangle>
+    
+    <app.Text Value="{ReadProperty Value}" />
+</Panel>

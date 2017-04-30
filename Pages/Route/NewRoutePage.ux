@@ -3,19 +3,54 @@
 
     <JavaScript File="EditRoutePage.js" />
 
-    <DockPanel>
+    <DockPanel ux:Name="ourDock">
         <app.Header Text="{locationName}: {loc.route.new}" />
 
         <Grid Dock="Bottom" ColumnCount="2">
             <app.Button Text="{loc.controls.save}" Color="#229922" Clicked="{save}" />
-            <app.Button Text="{loc.controls.cancel}" Clicked="{cancel}" />
+            <app.Button Text="{loc.controls.cancel}" Clicked="{goBack}" />
         </Grid>
 
         <ScrollView>
            <StackPanel Padding="10" ItemSpacing="10">
                 <StackPanel>
                     <app.Caption>{loc.route.field.name}:</app.Caption>
-                    <app.TextView Value="{name}"/>
+                    <app.TextBox Value="{name}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.description}:</app.Caption>
+                    <app.TextBox Value="{description}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.rating}:</app.Caption>
+                    <app.DropdownMenu ListItems="{availableRatings}" BindValue="{ratingId}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.sector}:</app.Caption>
+                    <app.TextBox Value="{sector}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.author}:</app.Caption>
+                    <app.TextBox Value="{author}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.height}:</app.Caption>
+                    <app.TextBox Value="{height}"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.bolts}:</app.Caption>
+                    <app.TextBox Value="{bolts}" InputHint="Number" />
+                </StackPanel>
+
+                <StackPanel>
+                    <app.Caption>{loc.route.field.dateFrom}:</app.Caption>
+                    <app.DateField DateValue="{dateFrom}" />
                 </StackPanel>
 
            </StackPanel>

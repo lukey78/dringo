@@ -16,6 +16,13 @@ function initializeRatingTable() {
     });
 }
 
+function getRatings() {
+    return new Promise(function(resolve, reject) {
+        var r =  db.query("SELECT r.id,r.french,r.uiaa,r.usa FROM rating r ORDER BY r.id");
+        resolve(r);
+    });
+}
+
 function setUserProfile(username, email) {
     db.execute("insert or replace into userprofile values (?, ?, ?)", 0, username, email);    
 }
@@ -51,17 +58,23 @@ function deleteLocation(id) {
 
 function getRoutes(locationId) {
     return new Promise(function(resolve, reject) {
-        var r =  db.query("select * from route where location_id=? order by name collate nocase", locationId);
+        var r =  db.query("SELECT * FROM route WHERE location_id=? ORDER BY name COLLATE NOCASE", locationId);
         resolve(r);
     });
 }
 
-function updateRoute(id, name) {
-    db.execute("update route set name=? where id=?", name, id);
+function updateRoute(id, name, description, rating_id, sector, author, height, bolts, dateFrom, active) {
+    db.execute("update route set name=?,description=?,rating_id=?,sector=?,author=?,height=?,bolts=?,dateFrom=?,active=? where id=?",
+        name, description, rating_id, sector, author, height, bolts, dateFrom, active,
+        id
+    );
 }
 
-function createRoute(locationId, name) {
-    db.execute("insert into route (location_id, name) values (?, ?)", locationId, name);
+function createRoute(locationId, name, description, rating_id, sector, author, height, bolts, dateFrom, active) {
+    console.log("saving route to db");
+    db.execute("insert into route (location_id, name, description, rating_id, sector, author, height, bolts, dateFrom, active) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        locationId, name, description, rating_id, sector, author, height, bolts, dateFrom, active
+    );
 }
 
 function deleteRoute(id) {
@@ -83,5 +96,7 @@ module.exports = {
     getRoutes: getRoutes,
     updateRoute: updateRoute,
     createRoute: createRoute,
-    deleteRoute: deleteRoute
+    deleteRoute: deleteRoute,
+
+    getRatings: getRatings
 };

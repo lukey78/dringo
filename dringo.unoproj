@@ -5,34 +5,32 @@
   "Version": "0.1",
   "VersionCode": "0",
   "Publisher": "Jens Hassler",
-
   "Packages": [
     "Fuse",
     "FuseJS"
   ],
-
   "Includes": [
     "*",
     "Modules/*.js:Bundle",
     "Localization/DeviceLocale.uno",
     "Localization/Localization.js:Bundle",
-    "Translations/*.json:Bundle"    
+    "Translations/*.json:Bundle"
   ],
-
   "Excludes": [
     "fuse_modules/"
   ],
-
   "Projects": [
-    "fuse_modules/bolav/fuse-sqlite/sqlite_include.unoproj"
+    "fuse_modules/bolav/fuse-sqlite/sqlite_include.unoproj",
+    "fuse_modules/native_controls/NativeControls/NativeControls.unoproj",
+    "fuse_modules/bolav/fuse-modalview/modal_include.unoproj"
   ],
-
   "FusePM": {
     "Dependencies": [
-      "https://github.com/bolav/fuse-sqlite"
+      "https://github.com/bolav/fuse-sqlite",
+      "https://github.com/bolav/fuse-datepicker",
+      "https://github.com/bolav/fuse-modalview"
     ]
   },
-
   "iOS": {
     "DevelopmentTeam": "S6KKQ734DC"
   }

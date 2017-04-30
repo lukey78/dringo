@@ -7,7 +7,7 @@ function goBack() {
 
 function chooseLocation(locationItem) {
     var selectedLocation = locationItem.data;
-    router.goto("dashboard", { selectedLocation: selectedLocation});
+    router.goto("dashboard", { selectedLocation: selectedLocation });
 }
 
 function editLocation(locationItem) {
@@ -26,4 +26,4 @@ module.exports = {
     newLocation: newLocation,
 
     locations: Context.locations
-}
+};

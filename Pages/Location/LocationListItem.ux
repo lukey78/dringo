@@ -2,6 +2,7 @@
     <string ux:Property="Locname" />
     <string ux:Property="City" />
     <bool ux:Property="Indoor" />
+    <string ux:Property="RouteCount" />
     <object ux:Property="ChooseClick" />
     <object ux:Property="EditClick" />
 
@@ -20,7 +21,7 @@
 
             <StackPanel Alignment="Left">
                 <app.Text Value="{ReadProperty Locname}" Alignment="Left" FontSize="20" />
-                <app.Text Value="{ReadProperty City}" Alignment="Left" FontSize="10" />
+                <app.Text Value="{ReadProperty City}, {ReadProperty RouteCount} {loc.location.field.routeCount}" Alignment="Left" FontSize="10" />
             </StackPanel>
 
             <Panel Clicked="{Property EditClick}" HitTestMode="LocalBounds">

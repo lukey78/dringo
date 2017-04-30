@@ -3,3 +3,5 @@ build
 .uno
 .vscode
 .idea
+Would skip repository fuse_modules/bolav/fuse-modalview/
+Would skip repository fuse_modules/native_controls/

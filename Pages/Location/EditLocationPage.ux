@@ -29,7 +29,7 @@
                 </StackPanel>
 
                 <StackPanel Margin="0,20,0,0">
-                    <app.Button Text="{routeCount} Routen" Clicked="{editRoutes}">
+                    <app.Button Text="{routeCount} {loc.location.field.routeCount}" Clicked="{editRoutes}">
                         <Image File="../../Assets/climber.png" Width="20" Alignment="Left" />
                         <FAText Value="&#xf013;" FontSize="20" Alignment="Right" />
                     </app.Button>
